@@ -1,0 +1,67 @@
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #f8f8f8, #fbfbfbb8);
+}
+
+#slot-machine {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#reels {
+    display: flex;
+    justify-content: center;
+}
+
+.reel-container {
+    position: relative;
+    margin: 0 10px;
+}
+
+.reel {
+    width: 100px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.lock {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.lock img {
+    width: 60px;
+    height: 60px;
+    margin-right: 5px;
+}
+
+#play-button {
+    padding: 5px 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+#play-button img {
+    width: 200px; /* Set the width of the coin image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%;
+}
+
+#money {
+    margin-top: 20px;
+}
+
+#message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#reels img {
+    max-width: 100px; 
+    max-height: 200px;
+}

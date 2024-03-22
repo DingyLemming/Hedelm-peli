@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hedelmäpeli</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional CSS for the animated coin */
+        #play-button {
+            transition: transform 0.1s ease;
+        }
+
+        /* Define a class for the animation */
+        .move {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <div id="slot-machine">
+        <div id="reels">
+            <div class="reel-container">
+                <div class="reel" id="symbol1"><img src="images/apple.png" alt="apple"></div>
+                <div class="lock" data-reel="1"><img src="images/lock-open.png" alt="lock"></div>
+            </div>
+            <div class="reel-container">
+                <div class="reel" id="symbol2"><img src="images/pear.png" alt="pear"></div>
+                <div class="lock" data-reel="2"><img src="images/lock-open.png" alt="lock"></div>
+            </div>
+            <div class="reel-container">
+                <div class="reel" id="symbol3"><img src="images/cherry.png" alt="cherry"></div>
+                <div class="lock" data-reel="3"><img src="images/lock-open.png" alt="lock"></div>
+            </div>
+            <div class="reel-container">
+                <div class="reel" id="symbol4"><img src="images/watermelon.png" alt="watermelon"></div>
+                <div class="lock" data-reel="4"><img src="images/lock-open.png" alt="lock"></div>
+            </div>
+        </div>
+        <div id="controls">
+            <!-- Add the animation class to the button -->
+            <button id="play-button" class="move"><img src="images/coin.png" alt="Play"></button>
+            <input type="number" id="bet" min="1" placeholder="Panos">
+            <div id="money">Rahaa: <span id="money-amount">100</span> €</div>
+            <div id="message"></div>
+        </div>
+    </div>    
+    <script src="script.js"></script>
+    <script>
+        // JavaScript to add click event listener and animate the button
+        const playButton = document.getElementById('play-button');
+        playButton.addEventListener('click', () => {
+            playButton.classList.add('move'); // Add the 'move' class to trigger the animation
+            // Reset the animation after it's completed
+            setTimeout(() => {
+                playButton.classList.remove('move');
+            }, 300); // 0.3 seconds matches the transition duration in CSS
+        });
+    </script>
+</body>
+</html>
